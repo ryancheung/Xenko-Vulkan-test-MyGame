@@ -256,10 +256,11 @@ namespace MyGame
             Parameters.BackBufferWidth = CEnvir.Target.ClientSize.Width;
             Parameters.BackBufferWidth = CEnvir.Target.ClientSize.Height;
 
-            Game.GraphicsDeviceManager.IsFullScreen = false;
+            // Change back buffer size on Game.BeginRun() would cause rendering issue.
             Game.GraphicsDeviceManager.PreferredBackBufferWidth = CEnvir.Target.ClientSize.Width;
             Game.GraphicsDeviceManager.PreferredBackBufferHeight = CEnvir.Target.ClientSize.Height;
 
+            Game.GraphicsDeviceManager.IsFullScreen = false;
             Game.GraphicsDeviceManager.PreferredColorSpace = ColorSpace.Gamma;
             Game.GraphicsDeviceManager.PreferredMultisampleCount = MultisampleCount.X2;
             Game.GraphicsDeviceManager.PreferredBackBufferFormat = PixelFormat.R8G8B8A8_UNorm;
